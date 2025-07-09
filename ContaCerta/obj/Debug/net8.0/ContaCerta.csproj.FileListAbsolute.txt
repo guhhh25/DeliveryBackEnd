@@ -141,3 +141,4 @@ C:\Users\guhhh\source\repos\ContaCerta\ContaCerta\obj\Debug\net8.0\ContaCerta.pd
 C:\Users\guhhh\source\repos\ContaCerta\ContaCerta\obj\Debug\net8.0\ContaCerta.genruntimeconfig.cache
 C:\Users\guhhh\source\repos\ContaCerta\ContaCerta\obj\Debug\net8.0\ref\ContaCerta.dll
 C:\Users\guhhh\source\repos\ContaCerta\ContaCerta\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\guhhh\source\repos\ContaCerta\ContaCerta\obj\Debug\net8.0\ContaCerta.sourcelink.json

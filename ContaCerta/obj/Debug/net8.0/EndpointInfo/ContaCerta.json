@@ -110,6 +110,143 @@
         }
       }
     },
+    "/api/Empresa": {
+      "get": {
+        "tags": [
+          "Empresa"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Empresa"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEmpresaRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEmpresaRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateEmpresaRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Empresa/{id}": {
+      "get": {
+        "tags": [
+          "Empresa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Empresa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEmpresaRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEmpresaRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEmpresaRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Empresa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Empresa/my-empresa": {
+      "get": {
+        "tags": [
+          "Empresa"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -171,6 +308,53 @@
         },
         "additionalProperties": false
       },
+      "CreateEmpresaRequest": {
+        "required": [
+          "cep",
+          "email",
+          "endereco",
+          "nome",
+          "numeroRegistro",
+          "telefone"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "numeroRegistro": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "email"
+          },
+          "telefone": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cep": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string"
+          },
+          "endereco": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "logo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "LoginRequest": {
         "required": [
           "email",
@@ -210,6 +394,53 @@
           "confirmPassword": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateEmpresaRequest": {
+        "required": [
+          "cep",
+          "email",
+          "endereco",
+          "nome",
+          "numeroRegistro",
+          "telefone"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "numeroRegistro": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "email"
+          },
+          "telefone": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cep": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string"
+          },
+          "endereco": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "logo": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

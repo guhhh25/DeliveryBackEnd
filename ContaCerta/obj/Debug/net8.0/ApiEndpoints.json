@@ -58,6 +58,95 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ContaCerta.Controllers.EmpresaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Empresa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ContaCerta.Controllers.EmpresaController",
+    "Method": "Create",
+    "RelativePath": "api/Empresa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ContaCerta.Controllers.CreateEmpresaRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ContaCerta.Controllers.EmpresaController",
+    "Method": "GetById",
+    "RelativePath": "api/Empresa/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ContaCerta.Controllers.EmpresaController",
+    "Method": "Update",
+    "RelativePath": "api/Empresa/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ContaCerta.Controllers.UpdateEmpresaRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ContaCerta.Controllers.EmpresaController",
+    "Method": "Delete",
+    "RelativePath": "api/Empresa/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ContaCerta.Controllers.EmpresaController",
+    "Method": "GetMyEmpresa",
+    "RelativePath": "api/Empresa/my-empresa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ContaCerta.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

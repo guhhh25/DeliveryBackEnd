@@ -18,13 +18,13 @@ namespace ContaCerta.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly RoleManager<IdentityRole<Guid>> _roleManager;
         private readonly IConfiguration _configuration;
 
         public AuthController(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
-            RoleManager<IdentityRole> roleManager,
+            RoleManager<IdentityRole<Guid>> roleManager,
             IConfiguration configuration)
         {
             _userManager = userManager;
@@ -110,7 +110,7 @@ namespace ContaCerta.Controllers
             // Criar role Admin se não existir
             if (!await _roleManager.RoleExistsAsync("Admin"))
             {
-                await _roleManager.CreateAsync(new IdentityRole("Admin"));
+                await _roleManager.CreateAsync(new IdentityRole<Guid>("Admin"));
             }
 
             // Adicionar usuário ao role Admin
@@ -153,7 +153,7 @@ namespace ContaCerta.Controllers
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
